@@ -1,12 +1,34 @@
 import { Tabs } from "expo-router";
+import { Image } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function TabsLayout() {
   return (
-    <Tabs>
-      <Tabs.Screen name="(home)/index" options={{ headerShown: false }}/>
-      <Tabs.Screen name="(map)/index" options={{title: 'Map'}}/>
-      <Tabs.Screen name="(profile)/[id]" options={{title: 'Profile'}}/>
-      <Tabs.Screen name="(about)/index" options={{title: 'About'}}/>
+    <Tabs initialRouteName="index">
+      <Tabs.Screen
+        name="index"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="map"
+        options={{
+          title: "Map",
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+        }}
+      />
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: "About",
+        }}
+      />
     </Tabs>
   );
 }

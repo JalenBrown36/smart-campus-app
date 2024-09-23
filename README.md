@@ -1,3 +1,3 @@
-# Welcome to Smart Campus App
+# Smart Campus App
 This project is a UMBC application developed with the DAMS Group for both research and academia purposes.
 

@@ -5,9 +5,11 @@ import {
   Text,
   Pressable,
   View,
+  ScrollView,
   StyleSheet,
   Alert,
 } from "react-native";
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 const backgroundImage = {
   uri: "https://umbc.edu/wp-content/uploads/2022/02/UMBC-Campus-drone2020-0415.jpg",
@@ -15,45 +17,56 @@ const backgroundImage = {
 
 export default function Home() {
   return (
-    <View style={styles.screenContainer}>
+    <ScrollView contentContainerStyle={styles.container}>
       <ImageBackground
         source={backgroundImage}
         resizeMode="cover"
         style={styles.homepageImage}
       >
-        <View style={styles.container}>
+        <View style={[styles.container, styles.content1, styles.overlay]}>
           <Image
             style={styles.homepageLogo}
             source={require("@/assets/images/logos/umbc-logo.png")}
           />
           <View style={{gap: 8}}>
-            <Text style={styles.headerText}>Smart Campus</Text>
-            <Text style={styles.bodyText}>
+            <Text style={[styles.text, styles.header]}>Smart Campus</Text>
+            <Text style={[styles.text, styles.body]}>
               Here to provide better services to our fellow retrievers
             </Text>
           </View>
           <Pressable onPress={() => Alert.alert("Button Presses")} style={styles.button}>
             <Text style={styles.buttonText}>Sign in</Text>
           </Pressable>
+          <View style={[styles.container2]}>
+            <Text style={[styles.text, styles.body]}>Learn more</Text>
+            <AntDesign name="down" size={24} color="white" />
+          </View>
         </View>
       </ImageBackground>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  screenContainer: {
-    flex: 1,
+  container: {
+    width: '100%',
+    height: '100%',
     alignItems: "center",
     justifyContent: "center",
   },
-  container: {
-    width: "100%",
-    paddingHorizontal: "10%",
-    flex: 1,
-    gap: 32,
+  container2: {
+    position: "absolute",
+    bottom: 16,
+    width: '100%',
+    display: "flex",
     alignItems: "center",
     justifyContent: "center",
+  },
+  content1: {
+    paddingHorizontal: "10%",
+    gap: 32,
+  },
+  overlay: {
     backgroundColor: "rgba(0,0,0,.6)",
   },
   homepageImage: {
@@ -67,16 +80,17 @@ const styles = StyleSheet.create({
     height: 280,
     resizeMode: "contain",
   },
-  headerText: {
+  text: {
     color: "#fff",
-    fontSize: 36,
-    fontWeight: "bold",
     textAlign: 'center',
   },
-  bodyText: {
-    color: "#fff",
+  header: {
+    fontSize: 36,
+    fontWeight: "bold",
+  },
+  body: {
     fontSize: 20,
-    textAlign: "center",
+    fontWeight: 'regular',
   },
   button: {
     paddingHorizontal: 16,

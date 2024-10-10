@@ -5,7 +5,6 @@ import {
   Text,
   Pressable,
   View,
-  ScrollView,
   StyleSheet,
   Alert,
   Dimensions,
@@ -19,7 +18,7 @@ const backgroundImage = {
 
 export default function Home() {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.screenContainer}>
       <ImageBackground
         source={backgroundImage}
         resizeMode="cover"
@@ -75,14 +74,13 @@ export default function Home() {
           </ScrollView>
         </View>
       </ImageBackground>
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    height: '100%',
+  screenContainer: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -114,7 +112,7 @@ const styles = StyleSheet.create({
   titleBodyText: {
     color: "#fff",
     fontSize: 20,
-    fontWeight: 'regular',
+    textAlign: "center",
   },
   headerText: {
     color: '#FFC20E',

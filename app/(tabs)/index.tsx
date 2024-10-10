@@ -5,12 +5,17 @@ import {
   Text,
   Pressable,
   View,
+  ScrollView,
   StyleSheet,
   Alert,
   Dimensions,
   ScrollView,
 } from "react-native";
+<<<<<<< HEAD
 import AntDesign from "@expo/vector-icons/AntDesign";
+=======
+import AntDesign from '@expo/vector-icons/AntDesign';
+>>>>>>> 0dac3c47d51a990aafc83e9b6c4d12675a80d47a
 
 const backgroundImage = {
   uri: "https://umbc.edu/wp-content/uploads/2022/02/UMBC-Campus-drone2020-0415.jpg",
@@ -18,12 +23,13 @@ const backgroundImage = {
 
 export default function Home() {
   return (
-    <View style={styles.screenContainer}>
+    <ScrollView contentContainerStyle={styles.container}>
       <ImageBackground
         source={backgroundImage}
         resizeMode="cover"
         style={styles.homepageImage}
       >
+<<<<<<< HEAD
         <View style={styles.container}>
           <ScrollView 
             contentContainerStyle={{ paddingHorizontal: "10%" }}
@@ -72,18 +78,40 @@ export default function Home() {
               </View> 
             </View>
           </ScrollView>
+=======
+        <View style={[styles.container, styles.content1, styles.overlay]}>
+          <Image
+            style={styles.homepageLogo}
+            source={require("@/assets/images/logos/umbc-logo.png")}
+          />
+          <View style={{gap: 8}}>
+            <Text style={[styles.text, styles.header]}>Smart Campus</Text>
+            <Text style={[styles.text, styles.body]}>
+              Here to provide better services to our fellow retrievers
+            </Text>
+          </View>
+          <Pressable onPress={() => Alert.alert("Button Presses")} style={styles.button}>
+            <Text style={styles.buttonText}>Sign in</Text>
+          </Pressable>
+          <View style={[styles.container2]}>
+            <Text style={[styles.text, styles.body]}>Learn more</Text>
+            <AntDesign name="down" size={24} color="white" />
+          </View>
+>>>>>>> 0dac3c47d51a990aafc83e9b6c4d12675a80d47a
         </View>
       </ImageBackground>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  screenContainer: {
-    flex: 1,
+  container: {
+    width: '100%',
+    height: '100%',
     alignItems: "center",
     justifyContent: "center",
   },
+<<<<<<< HEAD
   container: {
     width: "100%",
     flex: 1,
@@ -91,6 +119,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "rgba(0,0,0,.7)",
+=======
+  container2: {
+    position: "absolute",
+    bottom: 16,
+    width: '100%',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  content1: {
+    paddingHorizontal: "10%",
+    gap: 32,
+  },
+  overlay: {
+    backgroundColor: "rgba(0,0,0,.6)",
+>>>>>>> 0dac3c47d51a990aafc83e9b6c4d12675a80d47a
   },
   homepageImage: {
     width: "100%",
@@ -103,6 +147,7 @@ const styles = StyleSheet.create({
     height: 280,
     resizeMode: "contain",
   },
+<<<<<<< HEAD
   titleText: {
     color: "#fff",
     fontSize: 40,
@@ -111,8 +156,19 @@ const styles = StyleSheet.create({
   },
   titleBodyText: {
     color: "#fff",
+=======
+  text: {
+    color: "#fff",
+    textAlign: 'center',
+  },
+  header: {
+    fontSize: 36,
+    fontWeight: "bold",
+  },
+  body: {
+>>>>>>> 0dac3c47d51a990aafc83e9b6c4d12675a80d47a
     fontSize: 20,
-    textAlign: "center",
+    fontWeight: 'regular',
   },
   headerText: {
     color: '#FFC20E',

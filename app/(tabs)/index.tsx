@@ -28,7 +28,7 @@ export default function Home() {
           <ScrollView 
             contentContainerStyle={{ paddingHorizontal: "10%" }}
             decelerationRate={1}
-            snapToInterval={629}
+            // snapToInterval={629}
             snapToAlignment="center">
             <View style={styles.scrollContentContainer}>
               <View style={[styles.scrollContent, {marginTop: 136}]}>

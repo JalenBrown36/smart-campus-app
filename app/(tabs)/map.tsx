@@ -5,7 +5,6 @@ import { PROVIDER_GOOGLE } from "react-native-maps";
 export default function MapScreen() {
     return (
         <View style={styles.container}>
-            <Text>Map</Text>
             <MapView style={styles.map}/>
         </View>   
     )

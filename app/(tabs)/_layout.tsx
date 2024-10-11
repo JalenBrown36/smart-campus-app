@@ -4,12 +4,11 @@ import { Text } from "react-native";
 
 export default function TabsLayout() {
   const pathname = usePathname();
-  const size = 30;
-
   return (
     <Tabs
       initialRouteName="/map"
       screenOptions={{
+        unmountOnBlur: true,
         headerTitle: () => null,
         headerLeft: () => {
           let title = "";
@@ -48,7 +47,13 @@ export default function TabsLayout() {
           }) => {
             let iconName = props.focused ? "home" : "home-outline";
 
-            return <Ionicons name={iconName as any} size={props.size} color={props.color} />;
+            return (
+              <Ionicons
+                name={iconName as any}
+                size={props.size}
+                color={props.color}
+              />
+            );
           },
         }}
       />
@@ -63,7 +68,13 @@ export default function TabsLayout() {
           }) => {
             let iconName = props.focused ? "map" : "map-outline";
 
-            return <Ionicons name={iconName as any} size={props.size} color={props.color} />;
+            return (
+              <Ionicons
+                name={iconName as any}
+                size={props.size}
+                color={props.color}
+              />
+            );
           },
         }}
       />
@@ -78,7 +89,13 @@ export default function TabsLayout() {
           }) => {
             let iconName = props.focused ? "person" : "person-outline";
 
-            return <Ionicons name={iconName as any} size={props.size} color={props.color} />;
+            return (
+              <Ionicons
+                name={iconName as any}
+                size={props.size}
+                color={props.color}
+              />
+            );
           },
         }}
       />

@@ -9,6 +9,7 @@
       ]
     }
   },
+  "typeRoots": ["./types"],
   "include": [
     "**/*.ts",
     "**/*.tsx",

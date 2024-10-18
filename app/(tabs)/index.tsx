@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   bodyText: {
     width: Dimensions.get('screen').width / 1.5,
     color: "#fff",
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
     lineHeight: 24,
     textAlign: "left",
